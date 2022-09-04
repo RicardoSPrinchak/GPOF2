@@ -1,0 +1,13 @@
+D:\Documentos\GPOF\GPOF2.pdb
+D:\Documentos\GPOF\GPOF.xlsx
+D:\Documentos\GPOF\Resources\GPOF.xlsx
+D:\Documentos\GPOF\Resources\olga.jpg
+D:\Documentos\GPOF\GPOF2.dll.config
+D:\Documentos\GPOF\D3DCompiler_47_cor3.dll
+D:\Documentos\GPOF\PenImc_cor3.dll
+D:\Documentos\GPOF\PresentationNative_cor3.dll
+D:\Documentos\GPOF\vcruntime140_cor3.dll
+D:\Documentos\GPOF\wpfgfx_cor3.dll
+D:\Documentos\GPOF\libHarfBuzzSharp.dll
+D:\Documentos\GPOF\libSkiaSharp.dll
+D:\Documentos\GPOF\GPOF2.exe

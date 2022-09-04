@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ic1NzpeyYfe/S8auGZnuF10U/tFDyFHonLI52VVtUe4WWfgUEbawGKeRq0wzgzL7URjMSL2XyzSCfHlbz5Zm9g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Ricardo\\source\\repos\\GPOF2\\GPOF2\\GPOF2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ricardo\\.nuget\\packages\\gembox.document\\35.0.1076\\gembox.document.35.0.1076.nupkg.sha512",
+    "C:\\Users\\Ricardo\\.nuget\\packages\\gembox.spreadsheet\\49.0.1084\\gembox.spreadsheet.49.0.1084.nupkg.sha512",
+    "C:\\Users\\Ricardo\\.nuget\\packages\\harfbuzzsharp\\2.6.1.7\\harfbuzzsharp.2.6.1.7.nupkg.sha512",
+    "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\Ricardo\\.nuget\\packages\\portable.bouncycastle\\1.8.9\\portable.bouncycastle.1.8.9.nupkg.sha512",
+    "C:\\Users\\Ricardo\\.nuget\\packages\\skiasharp\\2.80.3\\skiasharp.2.80.3.nupkg.sha512",
+    "C:\\Users\\Ricardo\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512",
+    "C:\\Users\\Ricardo\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\Ricardo\\.nuget\\packages\\system.text.encoding.codepages\\5.0.0\\system.text.encoding.codepages.5.0.0.nupkg.sha512",
+    "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\6.0.8\\microsoft.netcore.app.runtime.win-x86.6.0.8.nupkg.sha512",
+    "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\6.0.8\\microsoft.windowsdesktop.app.runtime.win-x86.6.0.8.nupkg.sha512",
+    "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\6.0.8\\microsoft.aspnetcore.app.runtime.win-x86.6.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}

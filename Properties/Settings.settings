@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GPOF2.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="INEP0" Type="System.String" Scope="User">
+      <Value Profile="(Default)">13030710</Value>
+    </Setting>
+    <Setting Name="ESCOLA0" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Escola Estadual Olga Falcone</Value>
+    </Setting>
+    <Setting Name="INEP1" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ESCOLA1" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CHANGE" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ENSINO0" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Ensino Fundamental II</Value>
+    </Setting>
+    <Setting Name="ENSINO1" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>
