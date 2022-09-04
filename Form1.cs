@@ -46,21 +46,16 @@ namespace GPOF2
                 inep0 = Settings.Default["INEP1"].ToString();
                 ensino0 = Settings.Default["ENSINO1"].ToString();
             }
-
-
-                       
-           
-
+             
             ExcelFile workbook = ExcelFile.Load("GPOF.xlsx");
             var worksheet = workbook.Worksheets[0];
-            //var worksheet = workbook.Worksheets[workbook.Worksheets.Count];
+           
 
             worksheet.Cells["A7"].Value = "Professor(a): " + tbNome.Text;
             worksheet.Cells["A9"].Value = "Ano/Série: " + tbAno.Text;
             worksheet.Cells["B9"].Value = "Turma: " + tbTurma.Text;
             worksheet.Cells["C9"].Value = "Turno: " + tbTurno.Text;
             worksheet.Cells["A13"].Value = "COMPONENTE CURRICULAR: " + tbDisc.Text;
-
 
             worksheet.Cells["B18"].Value = P1.Text;
             worksheet.Cells["B18"].Row.AutoFit();
@@ -83,7 +78,6 @@ namespace GPOF2
             worksheet.Cells["A5"].Value = escola0;
             worksheet.Cells["A6"].Value = "Código do Inep da Escola: " + inep0;
             worksheet.Cells["A8"].Value = "Nível de Ensino: " + ensino0;
-
 
             if (rbPeriodo.Checked == true)
             {
@@ -121,9 +115,6 @@ namespace GPOF2
             }
             else
             {
-
-
-
                 if (rbPdf.Checked == true)
                 {
                     if (!Directory.Exists("C:\\GPOF"))
@@ -170,9 +161,6 @@ namespace GPOF2
                 }
             }
         }
-
-
-
         private void rbPeriodo_CheckedChanged(object sender, EventArgs e)
         {
             if (rbPeriodo.Checked == true)
@@ -182,7 +170,6 @@ namespace GPOF2
                 cbPeriodo.Enabled = true;
             }
         }
-
         private void rbMes_CheckedChanged(object sender, EventArgs e)
         {
             if (rbMes.Checked == true)
@@ -192,7 +179,6 @@ namespace GPOF2
                 cbMes.Enabled = true;
             }
         }
-
         private void rbData_CheckedChanged(object sender, EventArgs e)
         {
             if (rbData.Checked == true)
@@ -202,13 +188,11 @@ namespace GPOF2
                 tbData.Enabled = true;
             }
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("explorer.exe", @"c:\GPOF");
 
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -225,7 +209,6 @@ namespace GPOF2
             }
             else
             {
-                
                 var workbook1 = ExcelFile.Load(dlg.FileName);
                 var worksheet1 = workbook1.Worksheets[0];
                 // file = "C:\\GPOF\\" + dlg.FileName
@@ -250,7 +233,6 @@ namespace GPOF2
                 P4.Text = worksheet1.Cells["E18"].Value.ToString();
                 P5.Text = worksheet1.Cells["F18"].Value.ToString();
                 P6.Text = worksheet1.Cells["G18"].Value.ToString();
-
             }
 
         }
@@ -270,7 +252,6 @@ namespace GPOF2
             Form2 settingForm = new Form2();
             settingForm.ShowDialog();
         }
-
         private void P1_TextChanged(object sender, EventArgs e)
         {
             
@@ -281,24 +262,15 @@ namespace GPOF2
                 MessageBox.Show("Apenas " + MAX_LINES + " linhas são permitidas.");
                 
             }
-           
-
-
-        }
+         }
         private const int MAX_LINES = 32;
-        
         private void P1_KeyDown(object sender, KeyEventArgs e)
         {
-
             if (P1.Lines.Length >= MAX_LINES && e.KeyValue == '\r')
             {
                 e.Handled = true;
-               
             }
-            
-                
-        }
-
+         }
         private void P2_TextChanged(object sender, EventArgs e)
         {
             
@@ -315,7 +287,6 @@ namespace GPOF2
             if (P2.Lines.Length >= MAX_LINES && e.KeyValue == '\r')
                 e.Handled = true;
         }
-
         private void P3_TextChanged(object sender, EventArgs e)
         {
             if (this.P3.Lines.Length > MAX_LINES)
@@ -325,13 +296,11 @@ namespace GPOF2
                 MessageBox.Show("Apenas " + MAX_LINES + " linhas são permitidas.");
             }
         }
-
         private void P3_KeyDown(object sender, KeyEventArgs e)
         {
             if (P3.Lines.Length >= MAX_LINES && e.KeyValue == '\r')
                 e.Handled = true;
         }
-
         private void P4_TextChanged(object sender, EventArgs e)
         {
             if (this.P4.Lines.Length > MAX_LINES)
@@ -341,13 +310,11 @@ namespace GPOF2
                 MessageBox.Show("Apenas " + MAX_LINES + " linhas são permitidas.");
             }
         }
-
         private void P4_KeyDown(object sender, KeyEventArgs e)
         {
             if(P4.Lines.Length >= MAX_LINES && e.KeyValue == '\r')
                 e.Handled = true;
         }
-
         private void P5_TextChanged(object sender, EventArgs e)
         {
             if (this.P5.Lines.Length > MAX_LINES)
@@ -357,13 +324,11 @@ namespace GPOF2
                 MessageBox.Show("Apenas " + MAX_LINES + " linhas são permitidas.");
             }
         }
-
         private void P5_KeyDown(object sender, KeyEventArgs e)
         {
             if (P5.Lines.Length >= MAX_LINES && e.KeyValue == '\r')
                 e.Handled = true;
         }
-
         private void P6_TextChanged(object sender, EventArgs e)
         {
             if (this.P6.Lines.Length > MAX_LINES)
@@ -373,13 +338,11 @@ namespace GPOF2
                 MessageBox.Show("Apenas " + MAX_LINES + " linhas são permitidas.");
             }
         }
-
         private void P6_KeyDown(object sender, KeyEventArgs e)
         {
             if (P6.Lines.Length >= MAX_LINES && e.KeyValue == '\r')
                 e.Handled = true;
         }
-
         private void label18_Click(object sender, EventArgs e)
         {
 
