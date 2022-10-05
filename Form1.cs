@@ -7,6 +7,8 @@ using GemBox.Document;
 using GemBox.Document.Tables;
 using System.Linq;
 using Microsoft.VisualBasic.Devices;
+using System;
+using LengthUnit = GemBox.Spreadsheet.LengthUnit;
 
 namespace GPOF2
 {
@@ -46,10 +48,52 @@ namespace GPOF2
                 inep0 = Settings.Default["INEP1"].ToString();
                 ensino0 = Settings.Default["ENSINO1"].ToString();
             }
-             
+            
             ExcelFile workbook = ExcelFile.Load("GPOF.xlsx");
             var worksheet = workbook.Worksheets[0];
+
+            int maior = 0;
+            int[] linha = { P1.Lines.Length, P2.Lines.Length, P3.Lines.Length, P4.Lines.Length, P5.Lines.Length, P6.Lines.Length };
+            for (int i = 0; i <= 5; i++)
+            {
+                if (maior < linha[i])
+                {
+                    maior = linha[i];
+                }
+            }
            
+            if (maior > 33 && maior < 66)
+            {
+                worksheet.Rows["18"].SetHeight(409, LengthUnit.Pixel);
+                worksheet.Rows["19"].SetHeight(409, LengthUnit.Pixel);
+                var mergir = worksheet.Cells.GetSubrange("B18:B19");
+                mergir.Merged = true;
+               
+
+            }   
+          
+            if(maior > 66 && maior < 99)
+            {
+                worksheet.Rows["18"].SetHeight(409, LengthUnit.Pixel);
+                worksheet.Rows["19"].SetHeight(409, LengthUnit.Pixel);
+                worksheet.Rows["20"].SetHeight(409, LengthUnit.Pixel);
+                var mergir = worksheet.Cells.GetSubrange("B18:B20");
+                mergir.Merged = true;
+            }
+            if (maior > 99 && maior < 132)
+            {
+
+                var mergir = worksheet.Cells.GetSubrange("B18:B21");
+                mergir.Merged = true;
+            }
+            if (maior > 99 && maior < 132)
+            {
+
+                var mergir = worksheet.Cells.GetSubrange("B18:B22");
+                mergir.Merged = true;
+            }
+           
+
 
             worksheet.Cells["A7"].Value = "Professor(a): " + tbNome.Text;
             worksheet.Cells["A9"].Value = "Ano/Série: " + tbAno.Text;
@@ -58,26 +102,32 @@ namespace GPOF2
             worksheet.Cells["A13"].Value = "COMPONENTE CURRICULAR: " + tbDisc.Text;
 
             worksheet.Cells["B18"].Value = P1.Text;
-            worksheet.Cells["B18"].Row.AutoFit();
-            worksheet.Cells["B19"].Row.AutoFit();
+         
             worksheet.Cells["C18"].Value = P2.Text;
-            worksheet.Cells["C18"].Row.AutoFit();
-            worksheet.Cells["C19"].Row.AutoFit();
+  
             worksheet.Cells["D18"].Value = P3.Text;
-            worksheet.Cells["D18"].Row.AutoFit();
-            worksheet.Cells["D19"].Row.AutoFit();
+         
             worksheet.Cells["E18"].Value = P4.Text;
-            worksheet.Cells["E18"].Row.AutoFit();
-            worksheet.Cells["E19"].Row.AutoFit();
+           
             worksheet.Cells["F18"].Value = P5.Text;
-            worksheet.Cells["F18"].Row.AutoFit();
-            worksheet.Cells["F19"].Row.AutoFit();
+         
             worksheet.Cells["G18"].Value = P6.Text;
-            worksheet.Cells["G18"].Row.AutoFit();
-            worksheet.Cells["G19"].Row.AutoFit();
+
+
+            worksheet.Cells.AutoFitRowHeight(autoFitMergedRanges: true);
+
             worksheet.Cells["A5"].Value = escola0;
             worksheet.Cells["A6"].Value = "Código do Inep da Escola: " + inep0;
             worksheet.Cells["A8"].Value = "Nível de Ensino: " + ensino0;
+
+         
+
+            /*
+            if (P1.Lines.Length > 30)
+                {
+                worksheet.HorizontalPageBreaks.Add(30,0,0);
+                }
+              */
 
             if (rbPeriodo.Checked == true)
             {
@@ -161,6 +211,11 @@ namespace GPOF2
                 }
             }
         }
+
+
+       
+
+
         private void rbPeriodo_CheckedChanged(object sender, EventArgs e)
         {
             if (rbPeriodo.Checked == true)
@@ -168,6 +223,7 @@ namespace GPOF2
                 cbMes.Enabled = false;
                 tbData.Enabled = false;
                 cbPeriodo.Enabled = true;
+                cbPeriodo.SelectedIndex = 0;
             }
         }
         private void rbMes_CheckedChanged(object sender, EventArgs e)
@@ -177,6 +233,7 @@ namespace GPOF2
                 cbPeriodo.Enabled = false;
                 tbData.Enabled = false;
                 cbMes.Enabled = true;
+                cbMes.SelectedIndex = 0;
             }
         }
         private void rbData_CheckedChanged(object sender, EventArgs e)
@@ -186,6 +243,7 @@ namespace GPOF2
                 cbPeriodo.Enabled = false;
                 cbMes.Enabled = false;
                 tbData.Enabled = true;
+                
             }
         }
         private void button3_Click(object sender, EventArgs e)
@@ -254,98 +312,67 @@ namespace GPOF2
         }
         private void P1_TextChanged(object sender, EventArgs e)
         {
+           
             
-            if (this.P1.Lines.Length > MAX_LINES)
-            {
-                this.P1.Undo();
-                this.P1.ClearUndo();
-                MessageBox.Show("Apenas " + MAX_LINES + " linhas são permitidas.");
-                
-            }
-         }
+        }
         private const int MAX_LINES = 32;
         private void P1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (P1.Lines.Length >= MAX_LINES && e.KeyValue == '\r')
-            {
-                e.Handled = true;
-            }
-         }
+            
+           
+
+        }
         private void P2_TextChanged(object sender, EventArgs e)
         {
             
-            if (this.P2.Lines.Length > MAX_LINES)
-            {
-                this.P2.Undo();
-                this.P2.ClearUndo();
-                MessageBox.Show("Apenas " + MAX_LINES + " linhas são permitidas.");
-            }
+          
+           
         }
 
         private void P2_KeyDown(object sender, KeyEventArgs e)
         {
-            if (P2.Lines.Length >= MAX_LINES && e.KeyValue == '\r')
-                e.Handled = true;
+           
         }
         private void P3_TextChanged(object sender, EventArgs e)
         {
-            if (this.P3.Lines.Length > MAX_LINES)
-            {
-                this.P3.Undo();
-                this.P3.ClearUndo();
-                MessageBox.Show("Apenas " + MAX_LINES + " linhas são permitidas.");
-            }
+            
         }
         private void P3_KeyDown(object sender, KeyEventArgs e)
         {
-            if (P3.Lines.Length >= MAX_LINES && e.KeyValue == '\r')
-                e.Handled = true;
+          
         }
         private void P4_TextChanged(object sender, EventArgs e)
         {
-            if (this.P4.Lines.Length > MAX_LINES)
-            {
-                this.P4.Undo();
-                this.P4.ClearUndo();
-                MessageBox.Show("Apenas " + MAX_LINES + " linhas são permitidas.");
-            }
+           
         }
         private void P4_KeyDown(object sender, KeyEventArgs e)
         {
-            if(P4.Lines.Length >= MAX_LINES && e.KeyValue == '\r')
-                e.Handled = true;
+           
         }
         private void P5_TextChanged(object sender, EventArgs e)
         {
-            if (this.P5.Lines.Length > MAX_LINES)
-            {
-                this.P5.Undo();
-                this.P5.ClearUndo();
-                MessageBox.Show("Apenas " + MAX_LINES + " linhas são permitidas.");
-            }
+           
         }
         private void P5_KeyDown(object sender, KeyEventArgs e)
         {
-            if (P5.Lines.Length >= MAX_LINES && e.KeyValue == '\r')
-                e.Handled = true;
+           
         }
         private void P6_TextChanged(object sender, EventArgs e)
         {
-            if (this.P6.Lines.Length > MAX_LINES)
-            {
-                this.P6.Undo();
-                this.P6.ClearUndo();
-                MessageBox.Show("Apenas " + MAX_LINES + " linhas são permitidas.");
-            }
+           
         }
         private void P6_KeyDown(object sender, KeyEventArgs e)
         {
-            if (P6.Lines.Length >= MAX_LINES && e.KeyValue == '\r')
-                e.Handled = true;
+           
         }
         private void label18_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

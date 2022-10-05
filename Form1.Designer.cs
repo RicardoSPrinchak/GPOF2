@@ -405,7 +405,7 @@
             // 
             this.P1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.P1.Location = new System.Drawing.Point(11, 448);
-            this.P1.MaxLength = 600;
+            this.P1.MaxLength = 0;
             this.P1.Name = "P1";
             this.P1.Size = new System.Drawing.Size(159, 356);
             this.P1.TabIndex = 20;
@@ -416,7 +416,7 @@
             // P2
             // 
             this.P2.Location = new System.Drawing.Point(177, 448);
-            this.P2.MaxLength = 600;
+            this.P2.MaxLength = 0;
             this.P2.Name = "P2";
             this.P2.Size = new System.Drawing.Size(159, 356);
             this.P2.TabIndex = 21;
